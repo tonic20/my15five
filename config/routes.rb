@@ -1,4 +1,14 @@
 My15five::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   devise_for :users
-  root :to => 'high_voltage/pages#show', id: 'home'
+
+  resources :reports do
+    collection do
+      get :current
+    end
+  end
+  resources :answers
+
+  root :to => 'pages#home'
 end

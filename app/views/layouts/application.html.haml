@@ -22,11 +22,11 @@
             %span.icon-bar
             %span.icon-bar
           %a.brand(href=root_path) 15five
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+
+          - if user_signed_in?
+            .container.nav-collapse
+              = render_navigation
+              = render partial: 'shared/user_menu'
 
     .container
       .row
