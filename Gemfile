@@ -16,13 +16,13 @@ gem 'haml-rails'
 gem 'haml-contrib'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 gem 'inherited_resources'
 gem 'simple-navigation'
 gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'cancan'
 
 group :development do
   gem 'sqlite3'
@@ -30,6 +30,13 @@ group :development do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails", "~> 4.0"
+  gem "guard"
+  gem "guard-rspec"
 end
 
 group :production do

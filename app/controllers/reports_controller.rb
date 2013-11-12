@@ -4,6 +4,6 @@ class ReportsController < ApplicationController
   before_filter :authenticate_user!
 
   def current
-    @report = Report.latest(current_user)
+    @report = current_user.find_or_build_current_report
   end
 end

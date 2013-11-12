@@ -1,5 +1,10 @@
 class Report < ActiveRecord::Base
-  scope :latest, ->(user) {
-    where(user_id: user.id).order(id: :desc).limit(1)
+  scope :latest, -> {
+    order(week_date: :desc).limit(1)
   }
+
+  belongs_to :user
+  has_many :answers
+
+  validates :user_id, :week_date, presence: true
 end

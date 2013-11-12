@@ -1,4 +1,5 @@
-- if @report
-  Weekly Report
-- else
-  No reports
+%h1 Weekly Report
+
+%p
+  Due:
+  = l(@report.week_date, format: :long)
