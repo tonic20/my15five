@@ -21,6 +21,7 @@ gem 'devise'
 gem 'inherited_resources'
 gem 'simple-navigation'
 gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'high_voltage'
 
 group :development do
   gem 'thin'
