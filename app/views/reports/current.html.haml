@@ -3,3 +3,15 @@
 %p
   Due:
   = l(@report.week_date, format: :long)
+
+%h2 Questions
+
+= form_for @report, remote: true do |f|
+  %ul
+    = f.fields_for :answers do |answer_form|
+      %li
+        %h4= answer_form.object.question.subject
+        = answer_form.hidden_field :question_id
+        = answer_form.text_field :body
+
+  = f.submit class: "btn btn-primary"

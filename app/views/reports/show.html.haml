@@ -1,0 +1,13 @@
+%h1 Report
+
+%p
+  Due:
+  = l(@report.week_date, format: :long)
+
+%h2 Questions
+
+%ul
+  - @report.answers.each do |answer|
+    %li
+      %h4= answer.question.subject
+      = answer.body

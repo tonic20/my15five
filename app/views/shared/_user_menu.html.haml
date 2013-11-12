@@ -7,15 +7,17 @@
         %b.caret
       %ul.dropdown-menu
         %li
-          = link_to "#" do
+          = link_to edit_user_registration_path do
             = glyph "user"
             My profile
-        %li
-          = link_to edit_user_registration_path do
-            = glyph "lock"
-            Change password
+        - if current_user.manager?
+          %li
+            = link_to "#" do
+              = glyph "home"
+              Manage Company
+
         %li.divider
         %li
           = link_to destroy_session_path(:user), method: :delete do
             = glyph "off"
-            Sign out
+            Log out

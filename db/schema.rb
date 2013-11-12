@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(version: 20131112111209) do
 
   create_table "answers", force: true do |t|
     t.integer  "report_id"
+    t.integer  "question_id"
     t.string   "body"
-    t.integer  "position",   default: 0
+    t.integer  "position",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

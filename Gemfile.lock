@@ -93,6 +93,7 @@ GEM
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
+    gritter (1.0.3)
     guard (2.2.3)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -111,14 +112,8 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
-    has_scope (0.6.0.rc)
-      actionpack (>= 3.2, < 5)
-      activesupport (>= 3.2, < 5)
     hike (1.2.3)
     i18n (0.6.5)
-    inherited_resources (1.4.1)
-      has_scope (~> 0.6.0.rc)
-      responders (~> 1.0.0.rc)
     jbuilder (1.5.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -192,8 +187,6 @@ GEM
       ffi (>= 0.5.0)
     ref (1.0.5)
     remotipart (1.2.1)
-    responders (1.0.0)
-      railties (>= 3.2, < 5)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -266,11 +259,11 @@ DEPENDENCIES
   debugger
   devise
   factory_girl_rails (~> 4.0)
+  gritter (~> 1.0.3)
   guard
   guard-rspec
   haml-contrib
   haml-rails
-  inherited_resources
   jbuilder (~> 1.2)
   jquery-rails
   less-rails

@@ -1,0 +1,11 @@
+<% if @report.errors.blank? %>
+  $.gritter.add({
+    title: 'Notice',
+    text: 'Report successfully saved.',
+  });
+<% else %>
+  $.gritter.add({
+    title: 'Error',
+    text: 'Errors occured while saving report.',
+  });
+<% end %>

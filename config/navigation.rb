@@ -3,6 +3,7 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.dom_class = "nav"
 
-    primary.item :home, "My Reports", current_reports_path
+    primary.item :my, "My Reports", current_reports_path
+    primary.item :archive, "Past Reports", archive_reports_path
   end
 end

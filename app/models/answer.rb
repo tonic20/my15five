@@ -1,5 +1,7 @@
 class Answer < ActiveRecord::Base
   belongs_to :report
+  belongs_to :question
 
-  validates :body, :report_id, presence: true
+  validates :body, :question_id, presence: true
+  validates_associated :report
 end

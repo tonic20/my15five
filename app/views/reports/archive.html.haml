@@ -1,0 +1,10 @@
+%h1 Past Reports
+
+%table.table
+  %tr
+    %th Due
+    %th
+  - @reports.each do |report|
+    %tr
+      %td= l(report.week_date, format: :long)
+      %td= link_to "Show", report_path(report), class: "btn"
