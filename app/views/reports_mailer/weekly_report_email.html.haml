@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+  %body
+    %h1
+      Weekly Report
+
+    %ul
+      - @questions.each do |question|
+        %li
+          %h3= question.subject
+          %ul
+            - question.answers.weekly(@user).each do |answer|
+              %li
+                #{answer.body}
+                (#{answer.report.user.email})

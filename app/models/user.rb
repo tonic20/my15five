@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   validates :role, presence: true
 
+  scope :managers, -> { where(role: 'manager') }
+
   def admin?
     role == 'admin'
   end
@@ -28,6 +30,12 @@ class User < ActiveRecord::Base
         current.answers.new(question_id: q.id)
       end
       current
+    end
+  end
+
+  def self.send_weekly_reports
+    User.managers.find_each do |u|
+      ReportsMailer.weekly_report_email(u).deliver
     end
   end
 end
